@@ -1,6 +1,6 @@
 
 
-export interface Productos {
+export interface Producto {
     categoria: string;
     cod: string;
     titulo: string;

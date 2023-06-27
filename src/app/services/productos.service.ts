@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Producto } from '../app/interfaces/producto.interface';
+import { Producto } from '../interfaces/producto.interface';
 
 
 @Injectable({
@@ -18,9 +18,7 @@ export class ProductosService {
   }
 
   private cargarProductos() {
-
-
-    this.http.get('https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos_idx.json')
+  this.http.get('https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos_idx.json')
       .subscribe((resp: any) => {
         this.productos = resp;
         this.cargando = false;
@@ -29,8 +27,6 @@ export class ProductosService {
 
 
    getProducto(id : string){
-
      return this.http.get(`https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos/${id}.json`);
-     
    }
 }

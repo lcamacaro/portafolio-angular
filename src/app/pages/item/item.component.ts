@@ -12,12 +12,11 @@ export class ItemComponent implements OnInit {
 
   producto: ProductoDescripcion = {};
 
-  id: string = '';
+  id: string ='';
 
 
   constructor(private route: ActivatedRoute,
     public productoService: ProductosService) {
-
   }
 
   ngOnInit() {
@@ -30,8 +29,6 @@ export class ItemComponent implements OnInit {
             this.producto = producto;
           });
       });
-
-
   }
 
 }

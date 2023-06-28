@@ -5,7 +5,6 @@ import { ItemComponent } from './pages/item/item.component';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 
 
-
 const app_routes: Routes = [
     {
         path: '',

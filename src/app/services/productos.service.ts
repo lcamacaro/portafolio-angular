@@ -27,6 +27,6 @@ export class ProductosService {
 
 
    getProducto(id : string){
-     return this.http.get(`https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos/${id}.json`);
+     return this.http.get(`https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos/${ id }.json`);
    }
 }

@@ -10,29 +10,26 @@ import { ProductoDescripcion } from 'src/app/interfaces/producto-descripcion.int
 })
 export class ItemComponent implements OnInit {
 
-  producto: ProductoDescripcion={};
+  producto: ProductoDescripcion = {};
 
-  id: string='';
+  id: string = '';
 
 
-  constructor( private route: ActivatedRoute,
-               public productoService: ProductosService ) { 
+  constructor(private route: ActivatedRoute,
+    public productoService: ProductosService) {
 
-                this.producto;
-               }
+  }
 
   ngOnInit() {
 
     this.route.params
-        .subscribe( parametros => {
-          // console.log(parametros['id']);
-          this.productoService.getProducto(parametros['id'])
+      .subscribe(parametros => {
+        this.productoService.getProducto(parametros['id'])
           .subscribe((producto: ProductoDescripcion) => {
-            this.id=parametros['id'];
+            this.id = parametros['id'];
             this.producto = producto;
-            console.log('PRODUCTO', producto)
           });
-  });
+      });
 
 
   }

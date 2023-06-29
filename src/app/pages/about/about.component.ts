@@ -6,15 +6,13 @@ import { InfoPaginaService } from '../../services/info-pagina.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit{
+export class AboutComponent implements OnInit {
 
-  constructor(public infoService: InfoPaginaService){
+  constructor(public infoService: InfoPaginaService) {
 
   }
 
-
   ngOnInit() {
- 
   }
 
 }

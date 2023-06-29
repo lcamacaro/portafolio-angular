@@ -19,13 +19,12 @@ export class ProductosService {
   }
 
   private cargarProductos() {
-
     return new Promise((reject) => {
       this.http.get('https://angular-html-ce0ae-default-rtdb.firebaseio.com/productos_idx.json')
         .subscribe((resp: any) => {
           this.productos = resp;
           this.cargando = false;
-        //  resolve();
+          //  resolve();
         });
     });
   }
@@ -36,7 +35,6 @@ export class ProductosService {
   }
 
   buscarProducto(termino: string) {
-
     if (this.productos.length === 0) {
       //Cargar productos
       this.cargarProductos().then(() => {
@@ -44,23 +42,17 @@ export class ProductosService {
         //aplicar filtro
         this.filtrarProducto(termino);
       });
-
     } else {
       this.filtrarProducto(termino);
     }
-   
-    console.log('ELSE FILTRO', this.productosFiltrado);
   }
 
 
   private filtrarProducto(termino: string) {
-    this.productosFiltrado=[];
-
-    termino= termino.toLocaleLowerCase();
+    this.productosFiltrado = [];
+    termino = termino.toLocaleLowerCase();
     this.productos.forEach(prod => {
-
-      const tituloLower = prod.titulo.toLocaleLowerCase();
-
+    const tituloLower = prod.titulo.toLocaleLowerCase();
       if (prod.categoria.indexOf(termino) >= 0 || tituloLower.indexOf(termino) >= 0) {
         this.productosFiltrado.push(prod);
       }
